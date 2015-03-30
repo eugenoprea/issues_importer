@@ -3,11 +3,11 @@ require 'bundler'
 Bundler.require(:default)
 
 # Modify your credentials here
-BITBUCKET_USERNAME = "siong1987"
+BITBUCKET_USERNAME = "username"
 BITBUCKET_PASSWORD = "password"
 BITBUCKET_REPONAME = "reponame"
 
-GITHUB_USERNAME = "siong1987"
+GITHUB_USERNAME = "username"
 GITHUB_PASSWORD = "password"
 GITHUB_REPONAME = "owner/repo-name"
 
@@ -31,7 +31,7 @@ def extract_issues(status)
 end
 
 issues = []
-['new', 'open', 'on hold'].each do |status|
+['new', 'open', 'on hold', 'duplicate', 'resolved', 'wontfix', 'invalid'].each do |status|
   issues += extract_issues(status)
 end
 
